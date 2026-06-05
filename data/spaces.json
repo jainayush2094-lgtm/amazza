@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "label": "Interior",     "name": "The Quiet Suite", "size": "tall", "tone": "suite",      "image": "" },
+    { "label": "Detail",       "name": "Stone & Brass",   "size": "wide", "tone": "stonebrass", "image": "" },
+    { "label": "Powder Room",  "name": "Verde",           "size": "wide", "tone": "verde",      "image": "" }
+  ]
+}

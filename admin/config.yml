@@ -1,0 +1,68 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/amazza   # <-- change to your repo, e.g. jainayush2094-lgtm/amazza
+  branch: main
+  base_url: https://YOUR-WORKER.workers.dev   # <-- your Cloudflare sveltia-cms-auth worker URL
+
+# Where photos you upload through the CMS are stored
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  # 1) Site-wide text + hero film -------------------------------------------
+  - name: settings
+    label: "Site Settings"
+    files:
+      - name: site
+        label: "Homepage & Brand"
+        file: "data/site.json"
+        fields:
+          - { name: eyebrow,   label: "Hero eyebrow line", widget: string }
+          - { name: tagline,   label: "Hero tagline",      widget: string }
+          - { name: rotate,    label: "Rotating words",    widget: list, default: ["Basins","Faucets","Furniture","Accessories"] }
+          - { name: heroVideo, label: "Hero film (mp4) — leave blank for the animated still", widget: file, required: false }
+          - { name: heroPoster,label: "Hero film poster image (still fallback)", widget: image, required: false }
+          - { name: philosophy,label: "Philosophy paragraph (wrap words in |bars| for italic)", widget: text }
+          - { name: craftHeading, label: "Craft heading", widget: string }
+          - { name: craftBody,    label: "Craft paragraph", widget: text }
+          - { name: email,     label: "Contact email", widget: string }
+          - { name: whatsapp,  label: "WhatsApp number (country code + number, no +)", widget: string }
+
+  # 2) The six collections --------------------------------------------------
+  - name: collections_data
+    label: "Collections"
+    files:
+      - name: products
+        label: "Collections (the six)"
+        file: "data/products.json"
+        fields:
+          - name: items
+            label: "Collections"
+            widget: list
+            summary: "{{fields.numeral}} — {{fields.name}}"
+            fields:
+              - { name: numeral,     label: "Numeral (I, II, III…)", widget: string }
+              - { name: name,        label: "Name", widget: string }
+              - { name: description, label: "Short description", widget: text }
+              - { name: tone,        label: "Placeholder tone (used until a photo is added)", widget: select,
+                  options: ["colore","forma","wave","mobili","rubinetti","complementi"] }
+              - { name: image,       label: "Photo (square, ~1600×1600)", widget: image, required: false }
+
+  # 3) The Spaces lookbook --------------------------------------------------
+  - name: spaces_data
+    label: "Spaces"
+    files:
+      - name: spaces
+        label: "Spaces (lookbook)"
+        file: "data/spaces.json"
+        fields:
+          - name: items
+            label: "Scenes"
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: label, label: "Small label (e.g. Interior)", widget: string }
+              - { name: name,  label: "Scene name", widget: string }
+              - { name: size,  label: "Tile size", widget: select, options: ["tall","wide"] }
+              - { name: tone,  label: "Placeholder tone", widget: select, options: ["suite","stonebrass","verde"] }
+              - { name: image, label: "Photo", widget: image, required: false }
