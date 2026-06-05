@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: YOUR_GITHUB_USERNAME/amazza   # <-- change to your repo, e.g. jainayush2094-lgtm/amazza
+  repo: jainayush2094-lgtm/amazza   # <-- change to your repo, e.g. jainayush2094-lgtm/amazza
   branch: main
-  base_url: https://YOUR-WORKER.workers.dev   # <-- your Cloudflare sveltia-cms-auth worker URL
+  base_url: https://sveltia-cms-auth.jainayush2094.workers.dev   # <-- your Cloudflare sveltia-cms-auth worker URL
 
 # Where photos you upload through the CMS are stored
 media_folder: "images/uploads"
