@@ -47,6 +47,7 @@ collections:
               - { name: tone,        label: "Placeholder tone (used until a photo is added)", widget: select,
                   options: ["colore","forma","wave","mobili","rubinetti","complementi"] }
               - { name: image,       label: "Photo (square, ~1600×1600)", widget: image, required: false }
+              - { name: link,        label: "Inner page link (e.g. colore.html) — leave blank to hide Discover", widget: string, required: false }
 
   # 3) The Spaces lookbook (homepage) ----------------------------------------
   - name: spaces_data
@@ -156,5 +157,39 @@ collections:
               - { name: material,    label: "Material", widget: string, default: "Fine Fire Clay" }
               - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
               - { name: features,    label: "Feature chips", widget: list, default: ["Smooth Surface","Soft-Close Cover","Stainless Glaze"] }
+              - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
+                  field: { name: image, label: "Photo", widget: image } }
+
+  # 7) MOBILI — inner page products --------------------------------------------
+  - name: mobili_page
+    label: "Mobili Products"
+    files:
+      - name: mobili
+        label: "Mobili — Roman Reverie Vanities"
+        file: "data/mobili.json"
+        fields:
+          - { name: title,    label: "Page title", widget: string }
+          - { name: numeral,  label: "Numeral", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - { name: intro,    label: "Intro paragraph", widget: text }
+          - name: items
+            label: "Products (add / remove / reorder freely)"
+            widget: list
+            summary: "{{fields.sku}} — {{fields.name}}"
+            fields:
+              - { name: name,        label: "Name", widget: string }
+              - { name: sku,         label: "SKU code", widget: string }
+              - { name: series,      label: "Series", widget: select, options: ["Louvre","Lustro","Essenza"] }
+              - { name: price,       label: "Full set price (e.g. 17,000) — leave blank to hide", widget: string, required: false }
+              - { name: cabinet,     label: "Vanity cabinet price — leave blank to hide row", widget: string, required: false }
+              - { name: marble,      label: "Marble / counter price — leave blank to hide row", widget: string, required: false }
+              - { name: basin,       label: "Tabletop basin price — leave blank to hide row", widget: string, required: false }
+              - { name: finish,      label: "Finish (e.g. Fluted Griege)", widget: string }
+              - { name: swatch,      label: "Swatch hex for placeholder (finish tone)", widget: string, default: "#C9B091" }
+              - { name: description, label: "Poetic description", widget: text }
+              - { name: size,        label: "Size (e.g. 24 × 18 in)", widget: string, default: "24 × 18 in" }
+              - { name: mounting,    label: "Mounting", widget: string, default: "Floor" }
+              - { name: material,    label: "Board / material", widget: string, default: "HDHMR Board" }
+              - { name: features,    label: "Feature chips", widget: list, default: ["Rust-Free Fittings","HDHMR Board","Moisture Resistant","Easy to Clean"] }
               - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
                   field: { name: image, label: "Photo", widget: image } }
