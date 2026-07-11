@@ -125,3 +125,36 @@ collections:
               - { name: features,    label: "Feature chips", widget: list, default: ["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"] }
               - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
                   field: { name: image, label: "Photo", widget: image } }
+
+  # 6) SIGNATURE WAVE — inner page products -----------------------------------
+  - name: wave_page
+    label: "Signature Wave Products"
+    files:
+      - name: wave
+        label: "Signature Wave — Closets"
+        file: "data/wave.json"
+        fields:
+          - { name: title,    label: "Page title", widget: string }
+          - { name: numeral,  label: "Numeral", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - { name: intro,    label: "Intro paragraph", widget: text }
+          - name: items
+            label: "Products (add / remove / reorder freely)"
+            widget: list
+            summary: "{{fields.sku}} — {{fields.name}}"
+            fields:
+              - { name: name,        label: "Name", widget: string }
+              - { name: sku,         label: "SKU code", widget: string }
+              - { name: type,        label: "Type", widget: select, options: ["One-Piece Closet","Wall-Hung Closet"] }
+              - { name: price,       label: "Price (numbers only, e.g. 13,000) — leave blank to hide", widget: string, required: false }
+              - { name: finish,      label: "Finish", widget: string, default: "Glossy White" }
+              - { name: swatch,      label: "Swatch hex for placeholder (keep near-white)", widget: string, default: "#F3EFE6" }
+              - { name: description, label: "Poetic description", widget: text }
+              - { name: dimensions,  label: "Dimensions (e.g. L 690 · W 370 · H 780 mm)", widget: string }
+              - { name: trap,        label: "Trap distance (e.g. S-Trap 225 mm) — leave blank to hide", widget: string, required: false }
+              - { name: flush,       label: "Flush system (e.g. Washdown, 5D Siphonic) — leave blank to hide", widget: string, required: false }
+              - { name: material,    label: "Material", widget: string, default: "Fine Fire Clay" }
+              - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
+              - { name: features,    label: "Feature chips", widget: list, default: ["Smooth Surface","Soft-Close Cover","Stainless Glaze"] }
+              - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
+                  field: { name: image, label: "Photo", widget: image } }
