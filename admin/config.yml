@@ -96,6 +96,8 @@ collections:
               - { name: mounting,    label: "Mounting", widget: string, default: "Table Mounted" }
               - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
               - { name: features,    label: "Feature chips", widget: list, default: ["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"] }
+              - { name: images,      label: "Photos — first becomes the main card image", widget: image, multiple: true, required: false }
+
   # 5) FORMA — inner page products -------------------------------------------
   - name: forma_page
     label: "Forma Products"
@@ -124,8 +126,7 @@ collections:
               - { name: mounting,    label: "Mounting", widget: string, default: "Table Mounted" }
               - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
               - { name: features,    label: "Feature chips", widget: list, default: ["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"] }
-              - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
-                  field: { name: image, label: "Photo", widget: image } }
+              - { name: images,      label: "Photos — first becomes the main card image", widget: image, multiple: true, required: false }
 
   # 6) SIGNATURE WAVE — inner page products -----------------------------------
   - name: wave_page
@@ -157,8 +158,7 @@ collections:
               - { name: material,    label: "Material", widget: string, default: "Fine Fire Clay" }
               - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
               - { name: features,    label: "Feature chips", widget: list, default: ["Smooth Surface","Soft-Close Cover","Stainless Glaze"] }
-              - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
-                  field: { name: image, label: "Photo", widget: image } }
+              - { name: images,      label: "Photos — first becomes the main card image", widget: image, multiple: true, required: false }
 
   # 7) MOBILI — inner page products --------------------------------------------
   - name: mobili_page
@@ -191,5 +191,4 @@ collections:
               - { name: mounting,    label: "Mounting", widget: string, default: "Floor" }
               - { name: material,    label: "Board / material", widget: string, default: "HDHMR Board" }
               - { name: features,    label: "Feature chips", widget: list, default: ["Rust-Free Fittings","HDHMR Board","Moisture Resistant","Easy to Clean"] }
-              - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
-                  field: { name: image, label: "Photo", widget: image } }
+              - { name: images,      label: "Photos — first becomes the main card image", widget: image, multiple: true, required: false }
