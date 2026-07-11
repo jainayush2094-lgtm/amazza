@@ -372,7 +372,7 @@
       row.className='col-row reveal'+(i%2?' flip':'');
       row.innerHTML=`<div class="col-art"><div class="ph"></div></div>
         <div class="col-txt"><div class="num">${esc(p.numeral)}</div><div class="cname">${esc(p.name)}</div>
-        <p class="cdesc">${esc(p.description)}</p><a class="more" href="#">Discover <span class="ar"></span></a></div>`;
+        <p class="cdesc">${esc(p.description)}</p>${p.link?`<a class="more" href="${p.link}">Discover <span class="ar"></span></a>`:''}</div>`;
       rows.appendChild(row);
       fill(row.querySelector('.ph'), p, 'forma');
     });
