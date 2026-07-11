@@ -240,7 +240,9 @@
         "Moisture Resistant",
         "Easy to Clean"
       ],
-      "images": []
+      "images": [
+        "/images/uploads/IMG_20260605_185305.jpg"
+      ]
     },
     {
       "name": "Rovere",
@@ -262,7 +264,9 @@
         "Moisture Resistant",
         "Easy to Clean"
       ],
-      "images": []
+      "images": [
+        "/images/uploads/IMG_20260605_184007.jpg"
+      ]
     },
     {
       "name": "Ardesia",
@@ -284,7 +288,9 @@
         "Moisture Resistant",
         "Easy to Clean"
       ],
-      "images": []
+      "images": [
+        "/images/uploads/IMG_20260605_183856.jpg"
+      ]
     },
     {
       "name": "Spiga",
@@ -306,7 +312,9 @@
         "Moisture Resistant",
         "Easy to Clean"
       ],
-      "images": []
+      "images": [
+        "/images/uploads/IMG_20260605_184113.jpg"
+      ]
     },
     {
       "name": "Miele",
@@ -328,7 +336,9 @@
         "Moisture Resistant",
         "Easy to Clean"
       ],
-      "images": []
+      "images": [
+        "/images/uploads/IMG_20260605_182335.jpg"
+      ]
     },
     {
       "name": "Perla",
@@ -350,7 +360,9 @@
         "Moisture Resistant",
         "Easy to Clean"
       ],
-      "images": []
+      "images": [
+        "/images/uploads/IMG_20260605_184943.jpg"
+      ]
     }
   ]
 }
