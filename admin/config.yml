@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: jainayush2094-lgtm/amazza   # <-- change to your repo, e.g. jainayush2094-lgtm/amazza
+  repo: jainayush2094-lgtm/amazza
   branch: main
-  base_url: https://sveltia-cms-auth.jainayush2094.workers.dev   # <-- your Cloudflare sveltia-cms-auth worker URL
+  base_url: https://sveltia-cms-auth.jainayush2094.workers.dev
 
 # Where photos you upload through the CMS are stored
 media_folder: "images/uploads"
@@ -28,7 +28,7 @@ collections:
           - { name: email,     label: "Contact email", widget: string }
           - { name: whatsapp,  label: "WhatsApp number (country code + number, no +)", widget: string }
 
-  # 2) The six collections --------------------------------------------------
+  # 2) The six collections (homepage) ---------------------------------------
   - name: collections_data
     label: "Collections"
     files:
@@ -48,7 +48,7 @@ collections:
                   options: ["colore","forma","wave","mobili","rubinetti","complementi"] }
               - { name: image,       label: "Photo (square, ~1600×1600)", widget: image, required: false }
 
-  # 3) The Spaces lookbook --------------------------------------------------
+  # 3) The Spaces lookbook (homepage) ----------------------------------------
   - name: spaces_data
     label: "Spaces"
     files:
@@ -66,3 +66,34 @@ collections:
               - { name: size,  label: "Tile size", widget: select, options: ["tall","wide"] }
               - { name: tone,  label: "Placeholder tone", widget: select, options: ["suite","stonebrass","verde"] }
               - { name: image, label: "Photo", widget: image, required: false }
+
+  # 4) COLORE — inner page products ------------------------------------------
+  - name: colore_page
+    label: "Colore Products"
+    files:
+      - name: colore
+        label: "Colore — Coloured Basins"
+        file: "data/colore.json"
+        fields:
+          - { name: title,    label: "Page title", widget: string }
+          - { name: numeral,  label: "Numeral", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - { name: intro,    label: "Intro paragraph", widget: text }
+          - name: items
+            label: "Products (add / remove / reorder freely)"
+            widget: list
+            summary: "{{fields.sku}} — {{fields.name}}"
+            fields:
+              - { name: name,        label: "Name", widget: string }
+              - { name: sku,         label: "SKU code", widget: string }
+              - { name: price,       label: "Price (numbers only, e.g. 6,500) — leave blank to hide", widget: string, required: false }
+              - { name: finish,      label: "Finish", widget: select, options: ["Gloss","Matte"] }
+              - { name: swatch,      label: "Colour swatch (hex, e.g. #8FB8A3) — used for placeholder until photos added", widget: string }
+              - { name: description, label: "Poetic description", widget: text }
+              - { name: dimensions,  label: "Dimensions (e.g. L 500 · W 395 · H 145 mm)", widget: string }
+              - { name: material,    label: "Material", widget: string, default: "Fine Fire Clay" }
+              - { name: mounting,    label: "Mounting", widget: string, default: "Table Mounted" }
+              - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
+              - { name: features,    label: "Feature chips", widget: list, default: ["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"] }
+              - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
+                  field: { name: image, label: "Photo", widget: image } }
