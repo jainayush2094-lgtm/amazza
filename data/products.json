@@ -1,10 +1,46 @@
 {
   "items": [
-    { "numeral": "I",   "name": "Colore",         "description": "Hand-tinted tabletop basins. Colour as a deliberate, singular gesture.", "tone": "colore",      "image": "" },
-    { "numeral": "II",  "name": "Forma",          "description": "The white basin, perfected. Pure geometry, softened edges, no ornament.", "tone": "forma",       "image": "" },
-    { "numeral": "III", "name": "Signature Wave", "description": "Rimless closets engineered to disappear \u2014 silent in form and in flush.", "tone": "wave",        "image": "" },
-    { "numeral": "IV",  "name": "Mobili",         "description": "Vanities in fluted timber and brushed metal. Furniture for the bath.", "tone": "mobili",      "image": "" },
-    { "numeral": "V",   "name": "Rubinetti",      "description": "Four series of faucets. Slim spouts, weighted levers, considered finishes.", "tone": "rubinetti",   "image": "" },
-    { "numeral": "VI",  "name": "Complementi",    "description": "The finishing details. Accessories that complete the composition.", "tone": "complementi", "image": "" }
+    {
+      "numeral": "I",
+      "name": "Colore",
+      "description": "Hand-tinted tabletop basins. Colour as a deliberate, singular gesture.",
+      "tone": "colore",
+      "image": "/images/uploads/1000439888.png"
+    },
+    {
+      "numeral": "II",
+      "name": "Forma",
+      "description": "The white basin, perfected. Pure geometry, softened edges, no ornament.",
+      "tone": "forma",
+      "image": ""
+    },
+    {
+      "numeral": "III",
+      "name": "Signature Wave",
+      "description": "Rimless closets engineered to disappear — silent in form and in flush.",
+      "tone": "wave",
+      "image": ""
+    },
+    {
+      "numeral": "IV",
+      "name": "Mobili",
+      "description": "Vanities in fluted timber and brushed metal. Furniture for the bath.",
+      "tone": "mobili",
+      "image": ""
+    },
+    {
+      "numeral": "V",
+      "name": "Rubinetti",
+      "description": "Four series of faucets. Slim spouts, weighted levers, considered finishes.",
+      "tone": "rubinetti",
+      "image": ""
+    },
+    {
+      "numeral": "VI",
+      "name": "Complementi",
+      "description": "The finishing details. Accessories that complete the composition.",
+      "tone": "complementi",
+      "image": ""
+    }
   ]
 }
