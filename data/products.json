@@ -5,42 +5,48 @@
       "name": "Colore",
       "description": "Hand-tinted tabletop basins. Colour as a deliberate, singular gesture.",
       "tone": "colore",
-      "image": "/images/uploads/1000439888.png"
+      "image": "",
+      "link": "colore.html"
     },
     {
       "numeral": "II",
       "name": "Forma",
       "description": "The white basin, perfected. Pure geometry, softened edges, no ornament.",
       "tone": "forma",
-      "image": "/images/uploads/IMG_20260711_130901.png"
+      "image": "",
+      "link": "forma.html"
     },
     {
       "numeral": "III",
       "name": "Signature Wave",
       "description": "Rimless closets engineered to disappear — silent in form and in flush.",
       "tone": "wave",
-      "image": "/images/uploads/IMG_20260711_135355.png"
+      "image": "",
+      "link": "wave.html"
     },
     {
       "numeral": "IV",
       "name": "Mobili",
       "description": "Vanities in fluted timber and brushed metal. Furniture for the bath.",
       "tone": "mobili",
-      "image": "/images/uploads/IMG_20260711_141607.png"
+      "image": "",
+      "link": "mobili.html"
     },
     {
       "numeral": "V",
       "name": "Rubinetti",
       "description": "Four series of faucets. Slim spouts, weighted levers, considered finishes.",
       "tone": "rubinetti",
-      "image": ""
+      "image": "",
+      "link": ""
     },
     {
       "numeral": "VI",
       "name": "Complementi",
       "description": "The finishing details. Accessories that complete the composition.",
       "tone": "complementi",
-      "image": ""
+      "image": "",
+      "link": ""
     }
   ]
 }
