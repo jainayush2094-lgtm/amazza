@@ -95,5 +95,33 @@ collections:
               - { name: mounting,    label: "Mounting", widget: string, default: "Table Mounted" }
               - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
               - { name: features,    label: "Feature chips", widget: list, default: ["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"] }
+  # 5) FORMA — inner page products -------------------------------------------
+  - name: forma_page
+    label: "Forma Products"
+    files:
+      - name: forma
+        label: "Forma — White Basins"
+        file: "data/forma.json"
+        fields:
+          - { name: title,    label: "Page title", widget: string }
+          - { name: numeral,  label: "Numeral", widget: string }
+          - { name: subtitle, label: "Subtitle", widget: string }
+          - { name: intro,    label: "Intro paragraph", widget: text }
+          - name: items
+            label: "Products (add / remove / reorder freely)"
+            widget: list
+            summary: "{{fields.sku}} — {{fields.name}}"
+            fields:
+              - { name: name,        label: "Name", widget: string }
+              - { name: sku,         label: "SKU code", widget: string }
+              - { name: price,       label: "Price (numbers only, e.g. 5,000) — leave blank to hide", widget: string, required: false }
+              - { name: finish,      label: "Finish", widget: string, default: "Glossy White" }
+              - { name: swatch,      label: "Swatch hex for placeholder basin (keep near-white)", widget: string, default: "#F3EFE6" }
+              - { name: description, label: "Poetic description", widget: text }
+              - { name: dimensions,  label: "Dimensions (e.g. L 650 · W 415 · H 140 mm)", widget: string }
+              - { name: material,    label: "Material", widget: string, default: "Fine Fire Clay" }
+              - { name: mounting,    label: "Mounting", widget: string, default: "Table Mounted" }
+              - { name: warranty,    label: "Warranty", widget: string, default: "10 Years Replacement" }
+              - { name: features,    label: "Feature chips", widget: list, default: ["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"] }
               - { name: images,      label: "Photos (first = main; add several for the gallery)", widget: list, required: false,
                   field: { name: image, label: "Photo", widget: image } }
