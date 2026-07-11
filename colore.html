@@ -119,14 +119,9 @@
   .det .specs .r{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid rgba(42,38,32,.12)}
   .det .specs .k{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-top:2px}
   .det .specs .v{font-size:12px;text-align:right;letter-spacing:.02em}
-  .det .feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .det .feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;padding-bottom:8px}
   .det .feats span{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
     background:var(--cream-2);padding:7px 11px}
-  .det .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-  .det .cta a{flex:1;min-width:150px;text-align:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
-    text-decoration:none;padding:15px 18px;transition:.3s}
-  .det .cta .wa{background:var(--dark);color:var(--cream)}
-  .det .cta .wa:hover{background:var(--gold);color:var(--dark)}
 
   /* ===== footer (minimal) ===== */
   footer{background:var(--dark);color:var(--cream);text-align:center;padding:54px 22px 96px}
@@ -191,7 +186,7 @@
       {"name":"Avorio","sku":"AM-TT-CL09","price":"6,500","finish":"Matte","swatch":"#EDE4D3","description":"Soft as unbleached linen, Avorio is ivory without the cold. Its matte warmth flatters marble and brass alike — a quiet cream that reads as understated luxury, never plain white.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]}
     ]};
 
-  let DATA = null, WHATSAPP = "919999999999";
+  let DATA = null;
 
   function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
 
@@ -215,11 +210,7 @@
 
   async function load(){
     try{
-      const [c, s] = await Promise.all([
-        fetch('data/colore.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}),
-        fetch('data/site.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
-      ]);
-      DATA = c; if(s && s.whatsapp) WHATSAPP = s.whatsapp;
+      DATA = await fetch('data/colore.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()});
     }catch(e){ DATA = FALLBACK; }
     render();
   }
@@ -271,7 +262,6 @@
       + (galCount>1 ? `<button class="nav prev" onclick="galGo(-1)">&#8249;</button><button class="nav next" onclick="galGo(1)">&#8250;</button>
          <div class="dots">${Array.from({length:galCount},(_,d)=>`<i class="${d===0?'on':''}" onclick="galTo(${d})"></i>`).join('')}</div>` : '');
 
-    const waText = encodeURIComponent(`Hello Amazza, I would like to enquire about ${p.name} (${p.sku}) from the Colore collection.`);
     document.getElementById('det').innerHTML = `
       <div class="sku">${esc(p.sku)}</div>
       <h2>${esc(p.name)}</h2>
@@ -285,10 +275,7 @@
         <div class="r"><div class="k">Mounting</div><div class="v">${esc(p.mounting)}</div></div>
         <div class="r"><div class="k">Warranty</div><div class="v">${esc(p.warranty)}</div></div>
       </div>
-      <div class="feats">${(p.features||[]).map(f=>`<span>${esc(f)}</span>`).join('')}</div>
-      <div class="cta">
-        <a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${waText}">Enquire on WhatsApp</a>
-      </div>`;
+      <div class="feats">${(p.features||[]).map(f=>`<span>${esc(f)}</span>`).join('')}</div>`;
 
     const w = document.getElementById('sheetWrap');
     w.classList.add('open'); w.setAttribute('aria-hidden','false');
