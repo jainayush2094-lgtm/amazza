@@ -17,7 +17,12 @@
       "flush": "Washdown",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Smooth Surface", "Washdown Flush", "Soft-Close Cover", "Stainless Glaze"],
+      "features": [
+        "Smooth Surface",
+        "Washdown Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
       "images": []
     },
     {
@@ -33,7 +38,12 @@
       "flush": "5D Siphonic",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Rimless Design", "5D Siphonic Flush", "Soft-Close Cover", "Stainless Glaze"],
+      "features": [
+        "Rimless Design",
+        "5D Siphonic Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
       "images": []
     },
     {
@@ -49,7 +59,12 @@
       "flush": "Washdown",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Smooth Surface", "Washdown Flush", "Soft-Close Cover", "Stainless Glaze"],
+      "features": [
+        "Smooth Surface",
+        "Washdown Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
       "images": []
     },
     {
@@ -65,7 +80,12 @@
       "flush": "Washdown",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Smooth Surface", "Washdown Flush", "Soft-Close Cover", "Stainless Glaze"],
+      "features": [
+        "Smooth Surface",
+        "Washdown Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
       "images": []
     },
     {
@@ -81,8 +101,15 @@
       "flush": "6D Siphonic",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Hi-Gloss Surface", "6D Siphonic Flush", "Soft-Close Cover", "Stainless Glaze"],
-      "images": []
+      "features": [
+        "Hi-Gloss Surface",
+        "6D Siphonic Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
+      "images": [
+        "/images/uploads/1000439945.png"
+      ]
     },
     {
       "name": "Lunar",
@@ -97,7 +124,12 @@
       "flush": "Washdown",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Smooth Surface", "Washdown Flush", "Soft-Close Cover", "Stainless Glaze"],
+      "features": [
+        "Smooth Surface",
+        "Washdown Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
       "images": []
     },
     {
@@ -113,7 +145,12 @@
       "flush": "Washdown",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Smooth Surface", "Washdown Flush", "Soft-Close Cover", "Stainless Glaze"],
+      "features": [
+        "Smooth Surface",
+        "Washdown Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
       "images": []
     },
     {
@@ -129,7 +166,12 @@
       "flush": "5D Siphonic",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Hi-Gloss Surface", "5D Siphonic Flush", "Soft-Close Cover", "Stainless Glaze"],
+      "features": [
+        "Hi-Gloss Surface",
+        "5D Siphonic Flush",
+        "Soft-Close Cover",
+        "Stainless Glaze"
+      ],
       "images": []
     },
     {
@@ -145,7 +187,12 @@
       "flush": "",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Smooth Surface", "Soft-Close Cover", "Stainless Glaze", "Easy to Install"],
+      "features": [
+        "Smooth Surface",
+        "Soft-Close Cover",
+        "Stainless Glaze",
+        "Easy to Install"
+      ],
       "images": []
     },
     {
@@ -161,7 +208,12 @@
       "flush": "",
       "material": "Fine Fire Clay",
       "warranty": "10 Years Replacement",
-      "features": ["Smooth Surface", "Soft-Close Cover", "Stainless Glaze", "Easy to Install"],
+      "features": [
+        "Smooth Surface",
+        "Soft-Close Cover",
+        "Stainless Glaze",
+        "Easy to Install"
+      ],
       "images": []
     }
   ]
