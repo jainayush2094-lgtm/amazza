@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colore — Amazza</title>
+<meta name="description" content="The Colore collection by Amazza — coloured table-top basins in nine fired-glaze shades. Le luxe silencieux.">
+<meta property="og:title" content="Colore — Amazza">
+<meta property="og:description" content="Coloured table-top basins in nine fired-glaze shades.">
+<meta property="og:type" content="website">
+<link rel="icon" href="images/brand/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --gold:#C5A23E;--gold-soft:#D9BE6A;--gold-deep:#9A7E2C;
+    --dark:#16140F;--dark-2:#1E1B14;
+    --cream:#F5F1E8;--cream-2:#EAE3D4;
+    --ink:#272320;--muted:#8A8275;--muted-d:#9b9281;
+    --serif:'Cormorant Garamond',Georgia,serif;
+    --sans:'Montserrat',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.7;overflow-x:hidden}
+  ::selection{background:var(--gold);color:var(--dark)}
+  img{display:block;max-width:100%}
+  body::after{content:"";position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.045;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+  .eyebrow .ln{width:20px;height:1px;background:rgba(197,162,62,.55)}
+
+  /* ===== top bar (mobile-first) ===== */
+  .topbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 18px;background:rgba(20,18,13,.72);backdrop-filter:blur(12px);border-bottom:1px solid rgba(197,162,62,.16)}
+  .topbar .back{display:flex;align-items:center;gap:8px;color:#cfc7b4;text-decoration:none;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+  .topbar .back svg{width:14px;height:14px}
+  .topbar .brand{font-family:var(--serif);font-size:16px;letter-spacing:.3em;color:#fff;margin-left:.3em}
+  .topbar .spacer{width:52px}
+  @media(min-width:720px){.topbar{padding:16px 34px}.topbar .brand{font-size:18px}}
+
+  /* ===== hero (compact) ===== */
+  .chero{background:var(--dark);color:var(--cream);text-align:center;padding:104px 22px 54px;position:relative;overflow:hidden}
+  .chero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(197,162,62,.12),transparent 60%);pointer-events:none}
+  .chero .num{font-family:var(--serif);font-style:italic;font-size:30px;color:rgba(197,162,62,.55);line-height:1;margin-bottom:10px}
+  .chero h1{font-family:var(--serif);font-weight:500;font-size:clamp(46px,13vw,92px);letter-spacing:.14em;line-height:.95;margin-left:.14em}
+  .chero .sub{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-soft);margin-top:16px}
+  .chero .intro{max-width:560px;margin:22px auto 0;font-size:12.5px;font-weight:300;color:#bdb6a6;letter-spacing:.02em;line-height:1.9}
+  @media(min-width:720px){.chero{padding:130px 24px 70px}}
+
+  /* ===== grid ===== */
+  .cgrid{max-width:1180px;margin:0 auto;padding:44px 18px 70px;display:grid;grid-template-columns:1fr;gap:26px}
+  @media(min-width:560px){.cgrid{grid-template-columns:1fr 1fr;gap:24px;padding:54px 24px 80px}}
+  @media(min-width:960px){.cgrid{grid-template-columns:1fr 1fr 1fr;gap:30px}}
+
+  .pcard{background:#fff;border:1px solid rgba(42,38,32,.07);overflow:hidden;cursor:pointer;transition:.4s ease;-webkit-tap-highlight-color:transparent}
+  .pcard:active{transform:scale(.985)}
+  @media(hover:hover){.pcard:hover{transform:translateY(-5px);box-shadow:0 22px 48px -28px rgba(42,38,32,.4)}}
+  .pcard .ph{aspect-ratio:1/1;position:relative;overflow:hidden;background-size:cover;background-position:center;
+    display:flex;align-items:center;justify-content:center}
+  .pcard .ph .basin{width:58%;opacity:.92;filter:drop-shadow(0 14px 22px rgba(0,0,0,.25))}
+  .pcard .ph .chip{position:absolute;top:12px;left:12px;font-size:8px;letter-spacing:.22em;text-transform:uppercase;
+    background:rgba(23,21,15,.72);color:var(--gold-soft);padding:5px 9px}
+  .pcard .body{padding:18px 18px 20px}
+  .pcard .body .sku{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .pcard .body h3{font-family:var(--serif);font-weight:500;font-size:26px;letter-spacing:.02em;line-height:1.05;margin-top:4px}
+  .pcard .body .row{display:flex;align-items:baseline;justify-content:space-between;margin-top:8px}
+  .pcard .body .price{font-size:12px;letter-spacing:.06em;color:var(--gold-deep)}
+  .pcard .body .price small{font-size:8.5px;color:var(--muted);letter-spacing:.12em}
+  .pcard .body .view{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);border-bottom:1px solid var(--gold)}
+
+  /* ===== detail sheet (mobile: bottom sheet · desktop: modal) ===== */
+  .sheet-wrap{position:fixed;inset:0;z-index:200;display:none}
+  .sheet-wrap.open{display:block}
+  .sheet-wrap .veil{position:absolute;inset:0;background:rgba(12,10,7,.6);backdrop-filter:blur(4px);opacity:0;transition:.35s}
+  .sheet-wrap.open .veil{opacity:1}
+  .sheet{position:absolute;left:0;right:0;bottom:0;max-height:92vh;background:var(--cream);overflow-y:auto;
+    transform:translateY(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);border-radius:14px 14px 0 0;-webkit-overflow-scrolling:touch}
+  .sheet-wrap.open .sheet{transform:none}
+  .sheet .grab{position:sticky;top:0;z-index:5;background:var(--cream);padding:10px 0 6px;display:flex;justify-content:center}
+  .sheet .grab span{width:38px;height:4px;border-radius:2px;background:rgba(42,38,32,.2)}
+  .sheet .close{position:absolute;top:12px;right:14px;z-index:6;width:32px;height:32px;border:1px solid rgba(42,38,32,.2);
+    background:var(--cream);color:var(--ink);font-size:16px;line-height:1;cursor:pointer;border-radius:50%}
+  @media(min-width:760px){
+    .sheet{left:50%;right:auto;bottom:auto;top:50%;transform:translate(-50%,-46%) scale(.96);opacity:0;
+      width:min(880px,92vw);max-height:86vh;border-radius:4px;transition:.45s cubic-bezier(.2,.7,.2,1)}
+    .sheet-wrap.open .sheet{transform:translate(-50%,-50%) scale(1);opacity:1}
+    .sheet .grab{display:none}
+  }
+  .sheet .inner{display:grid;grid-template-columns:1fr}
+  @media(min-width:760px){.sheet .inner{grid-template-columns:1.05fr 1fr}}
+  /* gallery */
+  .gal{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--cream-2)}
+  .gal .slide{position:absolute;inset:0;background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;
+    opacity:0;transition:opacity .5s}
+  .gal .slide.on{opacity:1}
+  .gal .slide .basin{width:60%;filter:drop-shadow(0 18px 28px rgba(0,0,0,.28))}
+  .gal .dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:7px}
+  .gal .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:.3s}
+  .gal .dots i.on{background:var(--gold-soft);transform:scale(1.3)}
+  .gal .nav{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.35);background:rgba(20,18,13,.35);color:#fff;font-size:15px;cursor:pointer;display:none}
+  .gal:hover .nav{display:block}
+  .gal .nav.prev{left:12px}.gal .nav.next{right:12px}
+  /* details */
+  .det{padding:24px 22px 34px}
+  @media(min-width:760px){.det{padding:38px 36px;overflow-y:auto;max-height:86vh}}
+  .det .sku{font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .det h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,8vw,44px);letter-spacing:.02em;line-height:1;margin-top:6px}
+  .det .fin{display:inline-block;margin-top:10px;font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-deep);
+    border:1px solid rgba(154,126,44,.4);padding:5px 10px}
+  .det .desc{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.65;color:var(--ink);margin-top:16px}
+  .det .price{margin-top:16px;font-size:20px;font-family:var(--serif);color:var(--ink)}
+  .det .price small{font-size:9px;font-family:var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-left:8px}
+  .det .specs{margin-top:20px;border-top:1px solid rgba(42,38,32,.12)}
+  .det .specs .r{display:flex;justify-content:space-between;gap:14px;padding:10px 0;border-bottom:1px solid rgba(42,38,32,.12)}
+  .det .specs .k{font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+  .det .specs .v{font-size:12px;text-align:right;letter-spacing:.02em}
+  .det .feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .det .feats span{font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);
+    background:var(--cream-2);padding:7px 11px}
+  .det .cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .det .cta a{flex:1;min-width:150px;text-align:center;font-size:10px;letter-spacing:.2em;text-transform:uppercase;
+    text-decoration:none;padding:15px 18px;transition:.3s}
+  .det .cta .wa{background:var(--dark);color:var(--cream)}
+  .det .cta .wa:hover{background:var(--gold);color:var(--dark)}
+
+  /* ===== footer (minimal) ===== */
+  footer{background:var(--dark);color:var(--cream);text-align:center;padding:54px 22px 96px}
+  footer .fb{font-family:var(--serif);font-size:24px;letter-spacing:.3em;margin-left:.3em}
+  footer .ft{font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:14px;margin-top:8px}
+  footer a{display:inline-block;margin-top:20px;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-d);text-decoration:none}
+  footer a:hover{color:var(--gold-soft)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="back" href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 6l-6 6 6 6"/></svg>
+    Home
+  </a>
+  <div class="brand">AMAZZA</div>
+  <div class="spacer"></div>
+</div>
+
+<header class="chero">
+  <div class="num" id="hNum">I</div>
+  <h1 id="hTitle">COLORE</h1>
+  <div class="sub" id="hSub">Coloured Table-Top Basins</div>
+  <p class="intro" id="hIntro"></p>
+</header>
+
+<main class="cgrid" id="grid"></main>
+
+<!-- detail sheet -->
+<div class="sheet-wrap" id="sheetWrap" aria-hidden="true">
+  <div class="veil" onclick="closeSheet()"></div>
+  <div class="sheet">
+    <div class="grab"><span></span></div>
+    <button class="close" onclick="closeSheet()">&times;</button>
+    <div class="inner">
+      <div class="gal" id="gal"></div>
+      <div class="det" id="det"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="fb">AMAZZA</div>
+  <div class="ft">le luxe silencieux</div>
+  <a href="index.html">Return to the House</a>
+</footer>
+
+<script>
+  /* ---------- fallback data (used when data/colore.json can't be fetched, e.g. local preview) ---------- */
+  const FALLBACK = {"title":"Colore","numeral":"I","subtitle":"Coloured Table-Top Basins",
+    "intro":"Colour is a language. Each shade in the Colore collection speaks to a different sensibility, from the quiet confidence of Nero to the serene calm of Avorio. Available in glossy and matte finishes, each basin is crafted from high-grade ceramic with colour fired into the glaze — ensuring permanence that matches its beauty.",
+    "items":[
+      {"name":"Giada","sku":"AM-TT-CL01","price":"6,500","finish":"Gloss","swatch":"#8FB8A3","description":"A whisper of antique jade. Giada carries the calm of old porcelain, its glossy green shifting from soft mint to deep sea as the light moves through the day.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Menta","sku":"AM-TT-CL02","price":"6,500","finish":"Matte","swatch":"#B7C6B0","description":"Matte and quiet as crushed sage leaves, Menta softens a room without ever raising its voice — a powdery green at home in morning light and evening shadow alike.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Ottanio","sku":"AM-TT-CL03","price":"6,500","finish":"Matte","swatch":"#3F6E6C","description":"Deep as still water at dusk, Ottanio holds a teal that is equal parts blue and green. Its matte body drinks the light rather than returning it: grounded, composed, oceanic.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Petrolio","sku":"AM-TT-CL04","price":"6,500","finish":"Gloss","swatch":"#134A4E","description":"Petrolio glistens like deep water under lamplight — a saturated petrol-teal that turns near-black in shadow and luminous where the light lands. Dramatic, jewel-like, unmistakably modern.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Argilla","sku":"AM-TT-CL05","price":"6,500","finish":"Gloss","swatch":"#BC6A45","description":"Warm as fired earth and burnished copper, Argilla glows against stone and greenery — a glossy terracotta tone that brings sunlit warmth to the form. Earthy, rich, quietly opulent.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Nero","sku":"AM-TT-CL06","price":"6,500","finish":"Gloss","swatch":"#141414","description":"Pure glossy black with the depth of polished obsidian. Nero reflects its surroundings like dark water, turning the basin into a study in restraint — bold, graphic, endlessly elegant.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Grigio","sku":"AM-TT-CL07","price":"6,500","finish":"Matte","swatch":"#96A0A6","description":"A cool, contemplative grey brushed with the faintest blue. Grigio mutes reflection into a calm, stone-like stillness — the neutral that anchors a room without disappearing into it.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Ardesia","sku":"AM-TT-CL08","price":"6,500","finish":"Gloss","swatch":"#5C7286","description":"Slate-blue and softly glossy, Ardesia recalls wet stone after rain. The finish lifts its muted blue into something quietly luminous — cool and architectural against warm marble.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]},
+      {"name":"Avorio","sku":"AM-TT-CL09","price":"6,500","finish":"Matte","swatch":"#EDE4D3","description":"Soft as unbleached linen, Avorio is ivory without the cold. Its matte warmth flatters marble and brass alike — a quiet cream that reads as understated luxury, never plain white.","dimensions":"L 500 · W 395 · H 145 mm","material":"Fine Fire Clay","mounting":"Table Mounted","warranty":"10 Years Replacement","features":["Easy to Clean","Smooth Surface","Easy to Install","Anti-Stain Glaze"],"images":[]}
+    ]};
+
+  let DATA = null, WHATSAPP = "919999999999";
+
+  function esc(s){return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
+
+  /* elegant basin silhouette drawn per swatch colour (placeholder until photos are uploaded) */
+  function basinSVG(color, dark){
+    const stroke = dark ? 'rgba(255,255,255,.25)' : 'rgba(0,0,0,.12)';
+    return `<svg class="basin" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="100" cy="34" rx="88" ry="22" fill="${color}" stroke="${stroke}" stroke-width="1"/>
+      <path d="M12 34 C12 76 46 104 100 104 C154 104 188 76 188 34" fill="${color}" stroke="${stroke}" stroke-width="1"/>
+      <ellipse cx="100" cy="34" rx="70" ry="15" fill="rgba(255,255,255,.16)"/>
+      <ellipse cx="100" cy="36" rx="8" ry="2.6" fill="rgba(0,0,0,.28)"/>
+    </svg>`;
+  }
+  function isDark(hex){
+    const h = hex.replace('#',''); const r=parseInt(h.substr(0,2),16),g=parseInt(h.substr(2,2),16),b=parseInt(h.substr(4,2),16);
+    return (r*299+g*587+b*114)/1000 < 128;
+  }
+  function phBackground(sw){
+    return `radial-gradient(ellipse at 50% 28%,rgba(255,255,255,.18),transparent 60%),linear-gradient(155deg,${sw}22,${sw}55 60%,${sw}88)`;
+  }
+
+  async function load(){
+    try{
+      const [c, s] = await Promise.all([
+        fetch('data/colore.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw 0;return r.json()}),
+        fetch('data/site.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+      ]);
+      DATA = c; if(s && s.whatsapp) WHATSAPP = s.whatsapp;
+    }catch(e){ DATA = FALLBACK; }
+    render();
+  }
+
+  function render(){
+    document.getElementById('hNum').textContent = DATA.numeral || '';
+    document.getElementById('hTitle').textContent = (DATA.title||'').toUpperCase();
+    document.getElementById('hSub').textContent = DATA.subtitle || '';
+    document.getElementById('hIntro').textContent = DATA.intro || '';
+    document.title = (DATA.title||'Collection') + ' — Amazza';
+
+    // grid
+    const g = document.getElementById('grid');
+    g.innerHTML = DATA.items.map((p,i)=>{
+      const hasImg = p.images && p.images.length;
+      const ph = hasImg
+        ? `style="background-image:url('${p.images[0]}')"`
+        : `style="background:${phBackground(p.swatch)}"`;
+      return `<div class="pcard reveal" onclick="openSheet(${i})">
+        <div class="ph" ${ph}>
+          <span class="chip">${esc(p.finish)}</span>
+          ${hasImg ? '' : basinSVG(p.swatch, isDark(p.swatch))}
+        </div>
+        <div class="body">
+          <div class="sku">${esc(p.sku)}</div>
+          <h3>${esc(p.name)}</h3>
+          <div class="row">
+            <div class="price">₹ ${esc(p.price)} <small>MRP excl. GST</small></div>
+            <div class="view">View</div>
+          </div>
+        </div>
+      </div>`;
+    }).join('');
+
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  }
+
+  /* ---------- detail sheet ---------- */
+  let galIdx = 0, galCount = 0;
+  function openSheet(i){
+    const p = DATA.items[i];
+    const gal = document.getElementById('gal');
+    const slides = (p.images && p.images.length)
+      ? p.images.map((im,ix)=>`<div class="slide ${ix===0?'on':''}" style="background-image:url('${im}')"></div>`).join('')
+      : `<div class="slide on" style="background:${phBackground(p.swatch)}">${basinSVG(p.swatch,isDark(p.swatch))}</div>`;
+    galCount = (p.images && p.images.length) ? p.images.length : 1; galIdx = 0;
+    gal.innerHTML = slides
+      + (galCount>1 ? `<button class="nav prev" onclick="galGo(-1)">&#8249;</button><button class="nav next" onclick="galGo(1)">&#8250;</button>
+         <div class="dots">${Array.from({length:galCount},(_,d)=>`<i class="${d===0?'on':''}" onclick="galTo(${d})"></i>`).join('')}</div>` : '');
+
+    const waText = encodeURIComponent(`Hello Amazza, I would like to enquire about ${p.name} (${p.sku}) from the Colore collection.`);
+    document.getElementById('det').innerHTML = `
+      <div class="sku">${esc(p.sku)}</div>
+      <h2>${esc(p.name)}</h2>
+      <span class="fin">${esc(p.finish)} Finish</span>
+      <p class="desc">${esc(p.description)}</p>
+      <div class="price">₹ ${esc(p.price)}<small>MRP · Excl. GST</small></div>
+      <div class="specs">
+        <div class="r"><div class="k">Type</div><div class="v">Counter-Top Basin</div></div>
+        <div class="r"><div class="k">Dimensions</div><div class="v">${esc(p.dimensions)}</div></div>
+        <div class="r"><div class="k">Material</div><div class="v">${esc(p.material)}</div></div>
+        <div class="r"><div class="k">Mounting</div><div class="v">${esc(p.mounting)}</div></div>
+        <div class="r"><div class="k">Warranty</div><div class="v">${esc(p.warranty)}</div></div>
+      </div>
+      <div class="feats">${(p.features||[]).map(f=>`<span>${esc(f)}</span>`).join('')}</div>
+      <div class="cta">
+        <a class="wa" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP}?text=${waText}">Enquire on WhatsApp</a>
+      </div>`;
+
+    const w = document.getElementById('sheetWrap');
+    w.classList.add('open'); w.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    // swipe support
+    let sx=null; gal.ontouchstart=e=>{sx=e.touches[0].clientX};
+    gal.ontouchend=e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)galGo(dx<0?1:-1);sx=null;};
+  }
+  function closeSheet(){
+    const w = document.getElementById('sheetWrap');
+    w.classList.remove('open'); w.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  }
+  function galGo(d){ galTo((galIdx + d + galCount) % galCount); }
+  function galTo(n){
+    galIdx = n;
+    document.querySelectorAll('#gal .slide').forEach((s,i)=>s.classList.toggle('on',i===n));
+    document.querySelectorAll('#gal .dots i').forEach((s,i)=>s.classList.toggle('on',i===n));
+  }
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeSheet();});
+
+  load();
+</script>
+</body>
+</html>
