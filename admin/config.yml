@@ -22,6 +22,7 @@ collections:
           - { name: rotate,    label: "Rotating words",    widget: list, default: ["Basins","Faucets","Furniture","Accessories"] }
           - { name: heroVideo, label: "Hero film (mp4) — leave blank for the animated still", widget: file, required: false }
           - { name: heroPoster,label: "Hero film poster image (still fallback)", widget: image, required: false }
+          - { name: logo,      label: "Brand logo (SVG/PNG, transparent)", widget: image, required: false }
           - { name: philosophy,label: "Philosophy paragraph (wrap words in |bars| for italic)", widget: text }
           - { name: craftHeading, label: "Craft heading", widget: string }
           - { name: craftBody,    label: "Craft paragraph", widget: text }
