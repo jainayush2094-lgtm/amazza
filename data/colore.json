@@ -15,7 +15,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     },
     {
@@ -29,7 +34,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     },
     {
@@ -43,8 +53,15 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
-      "images": []
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
+      "images": [
+        "/images/uploads/IMG_20260712_141754(1).png"
+      ]
     },
     {
       "name": "Petrolio",
@@ -57,7 +74,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     },
     {
@@ -71,7 +93,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     },
     {
@@ -85,7 +112,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     },
     {
@@ -99,7 +131,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     },
     {
@@ -113,7 +150,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     },
     {
@@ -127,7 +169,12 @@
       "material": "Fine Fire Clay",
       "mounting": "Table Mounted",
       "warranty": "10 Years Replacement",
-      "features": ["Easy to Clean", "Smooth Surface", "Easy to Install", "Anti-Stain Glaze"],
+      "features": [
+        "Easy to Clean",
+        "Smooth Surface",
+        "Easy to Install",
+        "Anti-Stain Glaze"
+      ],
       "images": []
     }
   ]
