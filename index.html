@@ -61,18 +61,11 @@
   .hero .glow.b{background:radial-gradient(ellipse 60% 45% at 66% 90%,rgba(154,126,44,.22),transparent 70%);animation:d2 21s ease-in-out infinite alternate}
   @keyframes d1{from{transform:translate(-3%,-1%);opacity:.7}to{transform:translate(4%,2%);opacity:1}}@keyframes d2{from{transform:translate(2%,2%);opacity:.6}to{transform:translate(-4%,-2%);opacity:1}}
   .hero .vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 80% 80% at 50% 45%,transparent 55%,rgba(8,6,4,.55))}
-  .vlabel{position:absolute;z-index:4;font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:rgba(217,190,106,.5);writing-mode:vertical-rl;top:50%;transform:translateY(-50%)}
-  .vlabel.l{left:18px}.vlabel.r{right:18px;transform:translateY(-50%) rotate(180deg)}
-  @media(max-width:520px){.vlabel{font-size:7.5px;letter-spacing:.24em}.vlabel.l{left:9px}.vlabel.r{right:9px}}
-  .hcenter{position:relative;z-index:5;padding:0 22px}
-  .hcenter .mark{margin:0 auto 22px;opacity:0;animation:up 1s 1.8s ease both}
-  .hcenter .eyebrow{margin-bottom:26px;opacity:0;animation:up .9s 1.95s ease both;color:var(--gold)}
-  .hcenter .eyebrow .ln{background:rgba(197,162,62,.6)}
-  .hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(62px,17vw,170px);letter-spacing:.2em;line-height:.9;margin-left:.2em;color:var(--cream);opacity:0;animation:up 1.2s 2.1s ease both}
-  .hero .divider{width:1px;height:30px;background:linear-gradient(rgba(197,162,62,.7),transparent);margin:22px auto 0;opacity:0;animation:up 1s 2.4s ease both}
-  .hero .tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,5vw,30px);color:var(--gold-soft);margin-top:18px;letter-spacing:.05em;opacity:0;animation:up 1s 2.55s ease both}
-  .hero .rot{height:18px;margin-top:20px;opacity:0;animation:up 1s 2.8s ease both}
-  .hero .rot span{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:rgba(217,190,106,.68);transition:opacity .6s ease}
+  .hlogo{position:absolute;right:clamp(20px,6vw,70px);top:clamp(86px,13vh,130px);z-index:5;text-align:right;opacity:0;animation:up 1.2s 1.9s ease both}
+  .hlogo img{width:clamp(120px,22vw,220px);height:auto;display:block;margin-left:auto;filter:drop-shadow(0 8px 28px rgba(0,0,0,.5))}
+  .hfallback{font-family:var(--serif);font-weight:500;color:var(--cream);font-size:clamp(30px,6vw,48px);letter-spacing:.26em;margin-right:-.26em}
+  .hlogo .rot{height:16px;margin-top:14px}
+  .hlogo .rot span{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:rgba(217,190,106,.75);transition:opacity .6s ease}
   @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
   .hero .scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:5;text-align:center;opacity:0;animation:up 1s 3s ease both}
   .hero .scroll .w{font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.45)}
@@ -92,7 +85,8 @@
   .col-intro h2{font-family:var(--serif);font-weight:500;font-size:clamp(34px,7vw,58px);letter-spacing:.03em}
   .col-row{display:grid;grid-template-columns:1fr 1fr;align-items:stretch;min-height:80vh}
   .col-row.flip .col-art{order:2}
-  .col-art{position:relative;min-height:46vh;overflow:hidden}
+  .col-art{position:relative;min-height:46vh;overflow:hidden;display:block;cursor:default}
+  a.col-art{cursor:pointer}
   .col-art .ph{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
   .col-row:hover .col-art .ph{transform:scale(1.05)}
   .col-txt{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,7vw,92px)}
@@ -196,14 +190,9 @@
 <header class="hero">
   <div class="img" id="heroMedia"></div>
   <div class="glow a"></div><div class="glow b"></div><div class="vig"></div>
-  <div class="vlabel l">Basins · Faucets · Furniture</div>
-  <div class="vlabel r">Est. MMXXV · India</div>
-  <div class="hcenter">
-    <div class="mark"><svg width="34" height="34" viewBox="0 0 48 48" fill="none" stroke="#D9BE6A" stroke-width="1"><path d="M24 8 L38 40 M24 8 L10 40 M15.5 30 H32.5"/></svg></div>
-    <span class="eyebrow"><span class="ln"></span><span id="heroEyebrow">Premium Bath &amp; Sanitaryware</span><span class="ln"></span></span>
-    <h1>AMAZZA</h1>
-    <div class="divider"></div>
-    <div class="tag" id="heroTag">le luxe silencieux</div>
+  <div class="hlogo">
+    <img id="brandLogo" alt="Amazza" style="display:none">
+    <div class="hfallback" id="brandFallback">AMAZZA</div>
     <div class="rot"><span id="rot">Basins</span></div>
   </div>
   <div class="scroll"><div class="w">Scroll</div><div class="bar"></div></div>
@@ -312,7 +301,7 @@
 
   /* ---------- fallback sample data (used if /data files can't be fetched, e.g. preview) ---------- */
   const FALLBACK = {
-    site:{eyebrow:"Premium Bath & Sanitaryware",tagline:"le luxe silencieux",rotate:["Basins","Faucets","Furniture","Accessories"],heroVideo:"",heroPoster:"",
+    site:{eyebrow:"Premium Bath & Sanitaryware",tagline:"le luxe silencieux",rotate:["Basins","Faucets","Vanities","Toilet Seats"],heroVideo:"",heroPoster:"",
       philosophy:"Luxury that does not announce itself. Forms drawn with restraint, finished with patience \u2014 objects that hold their quiet long after the room falls silent. This is |le luxe silencieux|.",
       craftHeading:"What lies beneath the shine",
       craftBody:"A finish is only as honest as the layers below it. Our brass is plated in measured strata \u2014 copper for adhesion, a generous bed of nickel for protection, chrome for the final, lasting clarity. The result is a surface that resists the years, not merely the showroom light.",
@@ -342,9 +331,12 @@
   async function build(){
     const [site, products, spaces] = await Promise.all([load('site'), load('products'), load('spaces')]);
 
-    // hero text + media
-    document.getElementById('heroEyebrow').textContent = site.eyebrow;
-    document.getElementById('heroTag').textContent = site.tagline;
+    // hero logo + media
+    if(site.logo){
+      const lg=document.getElementById('brandLogo');
+      lg.src=site.logo; lg.style.display='block';
+      document.getElementById('brandFallback').style.display='none';
+    }
     if(site.heroVideo){
       const v=document.createElement('video'); v.className='img'; v.src=site.heroVideo; v.autoplay=v.loop=v.muted=v.playsInline=true;
       if(site.heroPoster) v.poster=site.heroPoster; v.setAttribute('muted','');
@@ -370,7 +362,10 @@
     products.items.forEach((p,i)=>{
       const row=document.createElement('div');
       row.className='col-row reveal'+(i%2?' flip':'');
-      row.innerHTML=`<div class="col-art"><div class="ph"></div></div>
+      const art = p.link
+        ? `<a class="col-art" href="${p.link}" aria-label="${esc(p.name)}"><div class="ph"></div></a>`
+        : `<div class="col-art"><div class="ph"></div></div>`;
+      row.innerHTML=`${art}
         <div class="col-txt"><div class="num">${esc(p.numeral)}</div><div class="cname">${esc(p.name)}</div>
         <p class="cdesc">${esc(p.description)}</p>${p.link?`<a class="more" href="${p.link}">Discover <span class="ar"></span></a>`:''}</div>`;
       rows.appendChild(row);
