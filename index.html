@@ -39,9 +39,6 @@
   @media(max-width:480px){.eyebrow{font-size:8.5px;letter-spacing:.3em}.eyebrow .ln{width:18px}}
   .cap{position:absolute;bottom:12px;right:14px;z-index:3;font-family:var(--serif);font-style:italic;font-size:12px;color:rgba(255,255,255,.42)}
 
-  #veil{position:fixed;inset:0;z-index:300;background:var(--dark);display:flex;align-items:center;justify-content:center;animation:lift 1s 1.6s cubic-bezier(.7,0,.3,1) forwards}
-  #veil .m{opacity:0;animation:mIn .9s .3s ease forwards,mOut .5s 1.5s ease forwards}
-  @keyframes lift{to{transform:translateY(-100%)}}@keyframes mIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:none}}@keyframes mOut{to{opacity:0}}
 
   nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:22px 38px;transition:.55s}
   nav .nbrand{font-family:var(--serif);font-size:19px;letter-spacing:.34em;color:#fff;opacity:0;transition:.55s}
@@ -61,13 +58,13 @@
   .hero .glow.b{background:radial-gradient(ellipse 60% 45% at 66% 90%,rgba(154,126,44,.22),transparent 70%);animation:d2 21s ease-in-out infinite alternate}
   @keyframes d1{from{transform:translate(-3%,-1%);opacity:.7}to{transform:translate(4%,2%);opacity:1}}@keyframes d2{from{transform:translate(2%,2%);opacity:.6}to{transform:translate(-4%,-2%);opacity:1}}
   .hero .vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(ellipse 80% 80% at 50% 45%,transparent 55%,rgba(8,6,4,.55))}
-  .hlogo{position:absolute;right:clamp(20px,6vw,70px);top:clamp(86px,13vh,130px);z-index:5;text-align:right;opacity:0;animation:up 1.2s 1.9s ease both}
+  .hlogo{position:absolute;right:clamp(20px,6vw,70px);top:clamp(86px,13vh,130px);z-index:5;text-align:right;opacity:0;animation:up 1.2s .4s ease both}
   .hlogo img{width:clamp(120px,22vw,220px);height:auto;display:block;margin-left:auto;filter:drop-shadow(0 8px 28px rgba(0,0,0,.5))}
   .hfallback{font-family:var(--serif);font-weight:500;color:var(--cream);font-size:clamp(30px,6vw,48px);letter-spacing:.26em;margin-right:-.26em}
   .hlogo .rot{height:16px;margin-top:14px}
   .hlogo .rot span{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:rgba(217,190,106,.75);transition:opacity .6s ease}
   @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-  .hero .scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:5;text-align:center;opacity:0;animation:up 1s 3s ease both}
+  .hero .scroll{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:5;text-align:center;opacity:0;animation:up 1s 1.2s ease both}
   .hero .scroll .w{font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.45)}
   .hero .scroll .bar{width:1px;height:38px;background:rgba(217,190,106,.5);margin:12px auto 0;transform-origin:top;animation:pulse 2.4s ease-in-out infinite}
   @keyframes pulse{0%,100%{transform:scaleY(.4);opacity:.4}50%{transform:scaleY(1);opacity:1}}
@@ -177,10 +174,6 @@
 </style>
 </head>
 <body>
-
-<div id="veil"><div class="m">
-  <svg width="40" height="40" viewBox="0 0 48 48" fill="none" stroke="#C5A23E" stroke-width="1"><path d="M24 8 L38 40 M24 8 L10 40 M15.5 30 H32.5"/></svg>
-</div></div>
 
 <nav id="nav">
   <div class="nbrand">AMAZZA</div>
